@@ -47,6 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsvHelper\CachedCsvReader.cs" />
+    <Compile Include="CsvHelper\CachedCsvReader.CsvBindingList.cs" />
+    <Compile Include="CsvHelper\CachedCsvReader.CsvPropertyDescriptor.cs" />
+    <Compile Include="CsvHelper\CachedCsvReader.CsvRecordComparer.cs" />
+    <Compile Include="CsvHelper\CsvReader.cs" />
+    <Compile Include="CsvHelper\CsvReader.DataReaderValidations.cs" />
+    <Compile Include="CsvHelper\CsvReader.RecordEnumerator.cs" />
+    <Compile Include="CsvHelper\Events\ParseErrorEventArgs.cs" />
+    <Compile Include="CsvHelper\Exceptions\MalformedCsvException.cs" />
+    <Compile Include="CsvHelper\Exceptions\MissingFieldCsvException.cs" />
+    <Compile Include="CsvHelper\MissingFieldAction.cs" />
+    <Compile Include="CsvHelper\ParseErrorAction.cs" />
+    <Compile Include="CsvHelper\Resources\ExceptionMessage.Designer.cs" />
+    <Compile Include="CsvHelper\ValueTrimmingOptions.cs" />
     <Compile Include="Dapper\CommandDefinition.cs" />
     <Compile Include="Dapper\CommandFlags.cs" />
     <Compile Include="Dapper\CustomPropertyTypeMap.cs" />
@@ -103,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="xmlEx\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CsvHelper\Resources\ExceptionMessage.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
