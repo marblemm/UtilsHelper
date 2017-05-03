@@ -9,10 +9,10 @@ namespace SqlTest
     {
         public static void Test()
         {
-            AccessHelp conn = new AccessHelp("test.accdb");
+            AccessHelp conn = new AccessHelp(@"..\..\..\Doc\test.accdb");
 
 
-            //通过封装的方法
+            //by ado
             var dbConn = conn.DbConn;
             string sql = "insert into UserTable(UserId, UserName) values(@UserId, @UserName)";
 
@@ -23,7 +23,7 @@ namespace SqlTest
             conn.ExecuteNonQuery(sql, dbParams);
 
 
-            //通过dapper
+            //by dapper
             dbConn.Execute(sql, new { UserId = Guid.NewGuid().ToString(), UserName = "aa" });
         }
 
