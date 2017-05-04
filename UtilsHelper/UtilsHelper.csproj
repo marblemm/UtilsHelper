@@ -111,12 +111,14 @@
     <Compile Include="SqlHelper\MysqlHelp.cs" />
     <Compile Include="SqlHelper\SqLiteHelp.cs" />
     <Compile Include="SqlHelper\SqLiteHelper.cs" />
+    <Compile Include="XmlHelper\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="copy.bat" />
     <None Include="Dapper\project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="xmlEx\" />
+    <Folder Include="ExcelHelper\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CsvHelper\Resources\ExceptionMessage.resx" />

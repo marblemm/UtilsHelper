@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsHelper", "UtilsHelper\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTest", "SqlTest\SqlTest.csproj", "{4D77402B-AD90-429D-9253-BC481818AE64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlHelper", "ControlHelper\ControlHelper.csproj", "{D35D5751-AEE5-48AC-9A43-2A8036614B69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD", "CAD\CAD.csproj", "{C90C1028-C665-45AD-BF51-34113B3895CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4D77402B-AD90-429D-9253-BC481818AE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D77402B-AD90-429D-9253-BC481818AE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D77402B-AD90-429D-9253-BC481818AE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C90C1028-C665-45AD-BF51-34113B3895CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C90C1028-C665-45AD-BF51-34113B3895CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C90C1028-C665-45AD-BF51-34113B3895CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C90C1028-C665-45AD-BF51-34113B3895CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,7 @@
+﻿call xcopy /y "$(TargetDir)$(TargetName).XML" "$(G3DDevPath10)program\"
+call xcopy /y "$(TargetPath)" "$(G3DDevPath10)program\"
+call xcopy /y "$(ProjectDir)Config\deflut.lut" "$(G3DDevPath10)program\powerplant\"
+call xcopy /y "$(ProjectDir)Config\GCS_BEIJING_D.xml" "$(G3DDevPath10)program\powerplant\"
+call xcopy /y /r "$(ProjectDir)Libs\*.dll" "$(G3DDevPath10)program\"
+call xcopy /y /r "$(ProjectDir)cefx86\*.*" "$(G3DDevPath10)program\"
+call xcopy /y /r "$(ProjectDir)cefx86\locales\*.*" "$(G3DDevPath10)program\locales\"
