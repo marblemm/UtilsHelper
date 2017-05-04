@@ -25,6 +25,7 @@ namespace CAD
 
         public override void MouseUp(object sender, MouseEventArgs e)
         {
+            GetRefCadPanel().Refresh();
         }
 
         public override void UnSet()
