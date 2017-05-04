@@ -29,7 +29,7 @@ namespace CAD
 
         public override void Draw(Graphics g)//重写画图
         {
-            g.DrawLine(new Pen(Color.Black,1), GetP1(), GetP2());
+            g.DrawLine(new Pen(PenColor, Penwidth), GetP1(), GetP2());
         }
 
         public override Point[] GetAllHitPoint()//返回所有热点

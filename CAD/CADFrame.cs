@@ -256,27 +256,10 @@ namespace CAD
             Graphics g = e.Graphics;
             for (int i = 0; i < _currentShapes.Count; i++)
             {
-                
-                string type=((BaseShape)_currentShapes[i]).GetType().ToString();
-                switch (type)
-                {
-                    case "CAD.LineShape":
-                        g.DrawLine(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP1(), ((BaseShape)_currentShapes[i]).GetP2());
-                        break;
-                    case "CAD.RectangleShape":
-                        g.DrawRectangle(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP1().X, ((BaseShape)_currentShapes[i]).GetP1().Y, (((BaseShape)_currentShapes[i]).GetP2().X - ((BaseShape)_currentShapes[i]).GetP1().X), (((BaseShape)_currentShapes[i]).GetP2().Y - ((BaseShape)_currentShapes[i]).GetP1().Y));
-                        g.DrawRectangle(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP1().X, ((BaseShape)_currentShapes[i]).GetP2().Y, (((BaseShape)_currentShapes[i]).GetP2().X - ((BaseShape)_currentShapes[i]).GetP1().X), (((BaseShape)_currentShapes[i]).GetP1().Y - ((BaseShape)_currentShapes[i]).GetP2().Y));
-                        g.DrawRectangle(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP2().X, ((BaseShape)_currentShapes[i]).GetP2().Y, (((BaseShape)_currentShapes[i]).GetP1().X - ((BaseShape)_currentShapes[i]).GetP2().X), (((BaseShape)_currentShapes[i]).GetP1().Y - ((BaseShape)_currentShapes[i]).GetP2().Y));
-                        g.DrawRectangle(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP2().X, ((BaseShape)_currentShapes[i]).GetP1().Y, (((BaseShape)_currentShapes[i]).GetP1().X - ((BaseShape)_currentShapes[i]).GetP2().X), (((BaseShape)_currentShapes[i]).GetP2().Y - ((BaseShape)_currentShapes[i]).GetP1().Y));
-                        break;
-                    case "CAD.EllipseShape":
-                        g.DrawEllipse(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP1().X, ((BaseShape)_currentShapes[i]).GetP1().Y, (((BaseShape)_currentShapes[i]).GetP2().X - ((BaseShape)_currentShapes[i]).GetP1().X), (((BaseShape)_currentShapes[i]).GetP2().Y - ((BaseShape)_currentShapes[i]).GetP1().Y));
-                        break;
-                    case "CAD.CircleShape":
-                        int r = (int)Math.Pow(Math.Pow(((BaseShape)_currentShapes[i]).GetP2().X - ((BaseShape)_currentShapes[i]).GetP1().X, 2) + Math.Pow(((BaseShape)_currentShapes[i]).GetP2().Y - ((BaseShape)_currentShapes[i]).GetP1().Y, 2), 0.5);
-                        g.DrawEllipse(new Pen(((BaseShape)_currentShapes[i]).PenColor, ((BaseShape)_currentShapes[i]).Penwidth), ((BaseShape)_currentShapes[i]).GetP1().X-r, ((BaseShape)_currentShapes[i]).GetP1().Y-r, 2*r,2*r);
-                        break;
-                }
+                var baseShape = _currentShapes[i] as BaseShape;
+                // ReSharper disable once UseNullPropagation
+                if (baseShape != null)
+                    baseShape.Draw(g);
                 ((BaseShape)_currentShapes[i]).SuperDraw(g);
             }
         }

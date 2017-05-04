@@ -97,6 +97,10 @@ namespace CAD
 
         public override void Draw(Graphics g)//重写画图
         {
+            g.DrawRectangle(new Pen(PenColor, Penwidth), GetP1().X, GetP1().Y, GetP2().X - GetP1().X, GetP2().Y - GetP1().Y);
+            g.DrawRectangle(new Pen(PenColor, Penwidth), GetP1().X, GetP2().Y, GetP2().X - GetP1().X, GetP1().Y - GetP2().Y);
+            g.DrawRectangle(new Pen(PenColor, Penwidth), GetP2().X, GetP2().Y, GetP1().X - GetP2().X, GetP1().Y - GetP2().Y);
+            g.DrawRectangle(new Pen(PenColor, Penwidth), GetP2().X, GetP1().Y, GetP1().X - GetP2().X, GetP2().Y - GetP1().Y);
         }
 
         public override Point[] GetAllHitPoint()//返回所有热点

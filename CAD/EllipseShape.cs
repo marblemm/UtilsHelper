@@ -96,7 +96,7 @@ namespace CAD
 
         public override void Draw(Graphics g)//重写画图
         {
-            g.DrawLine(new Pen(Color.Black, 1), GetP1(), GetP2());
+            g.DrawEllipse(new Pen(PenColor, Penwidth), GetP1().X, GetP1().Y, GetP2().X - GetP1().X, GetP2().Y - GetP1().Y);
         }
 
         public override Point[] GetAllHitPoint()//返回所有热点
