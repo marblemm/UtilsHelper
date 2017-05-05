@@ -9,23 +9,11 @@ namespace ScreenShot
 {
     public partial class MainForm : Form
     {
-        #region Fileds
-
         private readonly ProfessionalCaptureImageToolColorTable _colorTable = new ProfessionalCaptureImageToolColorTable();
-
-        #endregion
-
-        #region Constructors
 
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        protected override void OnActivated(EventArgs e)
-        {
-            base.OnActivated(e);
-            SystemHotKey.RegHotKey(Handle, 100, KeyModifiers.Ctrl | KeyModifiers.Alt, Keys.Z);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -36,18 +24,11 @@ namespace ScreenShot
             SetVisibleCore(false);
         }
 
-        protected override void OnLeave(EventArgs e)
-        {
-            base.OnLeave(e);
-            SystemHotKey.UnRegHotKey(Handle, 100);
-        }
-
         protected override void WndProc(ref Message m)
         {
-            const int wmHotKey = 0x0312;//热键消息
             switch (m.Msg)
             {
-                case wmHotKey:
+                case HotKeyDefault.WmHotKey:
                     switch (m.WParam.ToInt32())
                     {
                         case 100:
@@ -55,11 +36,15 @@ namespace ScreenShot
                             break;
                     }
                     break;
+                case HotKeyDefault.WmCreate:
+                    SystemHotKey.RegHotKey(Handle, 100, KeyModifiers.Ctrl | KeyModifiers.Alt, Keys.Z);
+                    break;
+                case HotKeyDefault.WmDestory:
+                    SystemHotKey.UnRegHotKey(Handle, 100);
+                    break;
             }
             base.WndProc(ref m);
         }
-
-        #endregion
 
         private void buttonCaptureImage_Click(object sender, EventArgs e)
         {
@@ -93,6 +78,8 @@ namespace ScreenShot
                 if (!Visible)
                 {
                     Show();
+                    WindowState = FormWindowState.Normal;
+                    Activate();
                 }
             }
 

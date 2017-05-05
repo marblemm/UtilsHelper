@@ -43,15 +43,15 @@ namespace UtilsHelper.HotKey
         {
             if (!RegisterHotKey(hwnd, hotKeyId, keyModifiers, key))
             {
-                int errorCode = Marshal.GetLastWin32Error();
-                if (errorCode == 1409)
-                {
-                    MessageBox.Show("热键被占用 ！");
-                }
-                else
-                {
-                    MessageBox.Show("注册热键失败！错误代码：" + errorCode);
-                }
+                //int errorCode = Marshal.GetLastWin32Error();
+                //if (errorCode == 1409)
+                //{
+                //    MessageBox.Show("热键被占用 ！");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("注册热键失败！错误代码：" + errorCode);
+                //}
             }
         }
 
@@ -65,7 +65,6 @@ namespace UtilsHelper.HotKey
             //注销指定的热键
             UnregisterHotKey(hwnd, hotKeyId);
         }
-
     }
 
     //（这个类是网上搜到的，这里借用一下。。。在此对原作者表示感谢！）
@@ -78,8 +77,8 @@ namespace UtilsHelper.HotKey
     //public class FormEx : Form
     //{
     //    private const int WmHotkey = 0x312; //窗口消息：热键
-    //    private const int WmCreate = 0x1; //窗口消息：创建
-    //    private const int WmDestroy = 0x2; //窗口消息：销毁
+    //    private const int WmCreate = 0x1;   //窗口消息：创建
+    //    private const int WmDestroy = 0x2;   //窗口消息：销毁
 
     //    private const int HotKeyId = 1; //热键ID（自定义）
 

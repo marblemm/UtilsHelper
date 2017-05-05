@@ -106,6 +106,7 @@
     <Compile Include="Dapper\WrappedDataReader.cs" />
     <Compile Include="Dapper\WrappedReader.cs" />
     <Compile Include="Dapper\XmlHandlers.cs" />
+    <Compile Include="HotKey\HotKeyDefault.cs" />
     <Compile Include="HotKey\KeyModifiers.cs" />
     <Compile Include="HotKey\SystemHotKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
