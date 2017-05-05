@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 
 namespace UtilsHelper.HotKey
@@ -35,14 +34,21 @@ namespace UtilsHelper.HotKey
         /// 辅助键名称。
         /// Alt, Ctrl, Shift, WindowsKey
         /// </summary>
-        [Flags()]
-        public enum KeyModifiers { None = 0, Alt = 1, Ctrl = 2, Shift = 4, WindowsKey = 8 }
+        [Flags]
+        public enum KeyModifiers
+        {
+            None = 0,
+            Alt = 1,
+            Ctrl = 2,
+            Shift = 4,
+            WindowsKey = 8
+        }
 
         /// <summary>
         /// 注册热键
         /// </summary>
         /// <param name="hwnd">窗口句柄</param>
-        /// <param name="hotKey_id">热键ID</param>
+        /// <param name="hotKeyId">热键ID</param>
         /// <param name="keyModifiers">组合键</param>
         /// <param name="key">热键</param>
         public static void RegHotKey(IntPtr hwnd, int hotKeyId, KeyModifiers keyModifiers, Keys key)
@@ -65,7 +71,7 @@ namespace UtilsHelper.HotKey
         /// 注销热键
         /// </summary>
         /// <param name="hwnd">窗口句柄</param>
-        /// <param name="hotKey_id">热键ID</param>
+        /// <param name="hotKeyId">热键ID</param>
         public static void UnRegHotKey(IntPtr hwnd, int hotKeyId)
         {
             //注销指定的热键
@@ -82,41 +88,37 @@ namespace UtilsHelper.HotKey
     //　　UnRegHotKey 方法只需要窗口句柄和热键ID，就可以将该热键注销。
     //　　然后，创建一个窗体，在代码视图中添加如下代码：
 
-    public class FormEx : Form
-    {
-        private const int WM_HOTKEY = 0x312; //窗口消息：热键
-        private const int WM_CREATE = 0x1; //窗口消息：创建
-        private const int WM_DESTROY = 0x2; //窗口消息：销毁
+    //public class FormEx : Form
+    //{
+    //    private const int WmHotkey = 0x312; //窗口消息：热键
+    //    private const int WmCreate = 0x1; //窗口消息：创建
+    //    private const int WmDestroy = 0x2; //窗口消息：销毁
 
-        private const int HotKeyID = 1; //热键ID（自定义）
+    //    private const int HotKeyId = 1; //热键ID（自定义）
 
-        protected override void WndProc(ref Message msg)
-        {
-            base.WndProc(ref msg);
-            switch (msg.Msg)
-            {
-                case WM_HOTKEY: //窗口消息：热键
-                    int tmpWParam = msg.WParam.ToInt32();
-                    if (tmpWParam == HotKeyID)
-                    {
-                        System.Windows.Forms.SendKeys.Send("^v");
-                    }
-                    break;
-                case WM_CREATE: //窗口消息：创建
-                    SystemHotKey.RegHotKey(this.Handle, HotKeyID, SystemHotKey.KeyModifiers.None, Keys.F1);
-                    break;
-                case WM_DESTROY: //窗口消息：销毁
-                    SystemHotKey.UnRegHotKey(this.Handle, HotKeyID); //销毁热键
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+    //    protected override void WndProc(ref Message msg)
+    //    {
+    //        base.WndProc(ref msg);
+    //        switch (msg.Msg)
+    //        {
+    //            case WmHotkey: //窗口消息：热键
+    //                int tmpWParam = msg.WParam.ToInt32();
+    //                if (tmpWParam == HotKeyId)
+    //                {
+    //                    System.Windows.Forms.SendKeys.Send("^v");
+    //                }
+    //                break;
+    //            case WmCreate: //窗口消息：创建
+    //                SystemHotKey.RegHotKey(this.Handle, HotKeyId, SystemHotKey.KeyModifiers.None, Keys.F1);
+    //                break;
+    //            case WmDestroy: //窗口消息：销毁
+    //                SystemHotKey.UnRegHotKey(this.Handle, HotKeyId); //销毁热键
+    //                break;
+    //            default:
+    //                break;
+    //        }
+    //    }
+    //}
 
-    //在上面代码中，WM_HOTKEY、WM_CREATE、WM_DESTROY 三个常量的值是系统定义，不用关心。HotKeyID 是自定义的一个数值，用于在注册了多个热键的时候使用该数值来区分不同热键处理逻辑，系统会在用户触发热键时将该值做为参数传递给处理程序。
-
-    //　　另外，上面代码中重写了一个系统方法 WndProc，这个方法叫“窗口过程”（参考百度百科），用于接收处理注册到该窗体上的所有事件，包括窗体创建、窗体销毁、系统热键等等。该方法有一个 Message 结构体参数，该参数封装了 Windows 消息的一些基本属性，比如消息ID、参数等等。
-
-    //　　上面代码在该方法接收到窗口创建消息的时候注册热键 F1，并且在接收到窗口销毁消息的时候注销该热键，并且在接收到系统热键消息的时候，根据消息参数（热键ID）来确认触发我们想要的动作，比如这里的模拟用户按下 Ctrl+V 键。
+    //在上面代码中，WM_HOTKEY、WM_CREATE、WM_DESTROY 三个常量的值是系统定义，不用关心。HotKeyID 是自定义的一个数值，用于在注册了多个热键的时候使用该数值来区分不同热键处理逻辑，系统会在用户触发热键时将该值做为参数传递给处理程序。另外，上面代码中重写了一个系统方法 WndProc，这个方法叫“窗口过程”（参考百度百科），用于接收处理注册到该窗体上的所有事件，包括窗体创建、窗体销毁、系统热键等等。该方法有一个 Message 结构体参数，该参数封装了 Windows 消息的一些基本属性，比如消息ID、参数等等。上面代码在该方法接收到窗口创建消息的时候注册热键 F1，并且在接收到窗口销毁消息的时候注销该热键，并且在接收到系统热键消息的时候，根据消息参数（热键ID）来确认触发我们想要的动作，比如这里的模拟用户按下 Ctrl+V 键。
 }
