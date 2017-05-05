@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlHelper", "ControlHel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD", "CAD\CAD.csproj", "{C90C1028-C665-45AD-BF51-34113B3895CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenShotFolder", "ScreenShotFolder", "{7D3750D8-A377-4059-B7A9-3120899068EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureImageTool", "ScreenShotFolder\CaptureImageTool\CaptureImageTool.csproj", "{13E62362-5D00-418F-83FF-99B2699746D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShot", "ScreenShotFolder\ScreenShot\ScreenShot.csproj", "{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,20 @@ Global
 		{C90C1028-C665-45AD-BF51-34113B3895CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C90C1028-C665-45AD-BF51-34113B3895CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C90C1028-C665-45AD-BF51-34113B3895CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E62362-5D00-418F-83FF-99B2699746D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E62362-5D00-418F-83FF-99B2699746D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E62362-5D00-418F-83FF-99B2699746D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E62362-5D00-418F-83FF-99B2699746D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{13E62362-5D00-418F-83FF-99B2699746D7} = {7D3750D8-A377-4059-B7A9-3120899068EB}
+		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616} = {7D3750D8-A377-4059-B7A9-3120899068EB}
 	EndGlobalSection
 EndGlobal
