@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsHelper", "UtilsHelper\UtilsHelper.csproj", "{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTest", "SqlTest\SqlTest.csproj", "{4D77402B-AD90-429D-9253-BC481818AE64}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlHelper", "ControlHelper\ControlHelper.csproj", "{D35D5751-AEE5-48AC-9A43-2A8036614B69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD", "CAD\CAD.csproj", "{C90C1028-C665-45AD-BF51-34113B3895CF}"
@@ -17,20 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureImageTool", "ScreenS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShot", "ScreenShotFolder\ScreenShot\ScreenShot.csproj", "{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTest", "Sql\SqlTest\SqlTest.csproj", "{4D77402B-AD90-429D-9253-BC481818AE64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsHelper", "Sql\UtilsHelper\UtilsHelper.csproj", "{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D77402B-AD90-429D-9253-BC481818AE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D77402B-AD90-429D-9253-BC481818AE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D77402B-AD90-429D-9253-BC481818AE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D77402B-AD90-429D-9253-BC481818AE64}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D35D5751-AEE5-48AC-9A43-2A8036614B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +39,14 @@ Global
 		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D77402B-AD90-429D-9253-BC481818AE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D77402B-AD90-429D-9253-BC481818AE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D77402B-AD90-429D-9253-BC481818AE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D77402B-AD90-429D-9253-BC481818AE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
