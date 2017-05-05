@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ScreenShot
 {
-    partial class AboutBoxCSharpWinDemo : Form
+    partial class AboutForm : Form
     {
         #region Fileds
 
@@ -14,7 +14,7 @@ namespace ScreenShot
 
         #region Constructors
 
-        public AboutBoxCSharpWinDemo()
+        public AboutForm()
         {
             InitializeComponent();
 

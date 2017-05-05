@@ -127,7 +127,7 @@ namespace ScreenShot
 
         private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBoxCSharpWinDemo f = new AboutBoxCSharpWinDemo();
+            AboutForm f = new AboutForm();
             f.ShowDialog();
         }
     }
