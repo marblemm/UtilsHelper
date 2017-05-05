@@ -30,19 +30,7 @@ namespace UtilsHelper.HotKey
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
-        /// <summary>
-        /// 辅助键名称。
-        /// Alt, Ctrl, Shift, WindowsKey
-        /// </summary>
-        [Flags]
-        public enum KeyModifiers
-        {
-            None = 0,
-            Alt = 1,
-            Ctrl = 2,
-            Shift = 4,
-            WindowsKey = 8
-        }
+
 
         /// <summary>
         /// 注册热键
@@ -79,7 +67,6 @@ namespace UtilsHelper.HotKey
         }
 
     }
-
 
     //（这个类是网上搜到的，这里借用一下。。。在此对原作者表示感谢！）
     //　　上面这个类中，只需要使用两个静态方法 RegHotKey 和 UnRegHotKey 来注册和注销热键即可。

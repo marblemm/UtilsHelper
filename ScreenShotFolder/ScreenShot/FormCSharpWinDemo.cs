@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using CaptureTool;
+using UtilsHelper.HotKey;
 
 namespace ScreenShot
 {
@@ -24,7 +25,7 @@ namespace ScreenShot
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            HotKey.RegisterHotKey(Handle, 100, KeyModiffiers.Ctrl | KeyModiffiers.Alt, Keys.Z);
+            SystemHotKey.RegHotKey(Handle, 100, KeyModifiers.Ctrl | KeyModifiers.Alt, Keys.Z);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -38,7 +39,7 @@ namespace ScreenShot
         protected override void OnLeave(EventArgs e)
         {
             base.OnLeave(e);
-            HotKey.UnRegisterHotKey(Handle, 100);
+            SystemHotKey.UnRegHotKey(Handle, 100);
         }
 
         protected override void WndProc(ref Message m)

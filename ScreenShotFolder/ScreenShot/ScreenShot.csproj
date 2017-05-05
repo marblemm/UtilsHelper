@@ -74,8 +74,6 @@
     <Compile Include="FormCSharpWinDemo.Designer.cs">
       <DependentUpon>FormCSharpWinDemo.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotKey.cs" />
-    <Compile Include="KeyModiffiers.cs" />
     <Compile Include="ProfessionalCaptureImageToolColorTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,6 +132,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Sql\UtilsHelper\UtilsHelper.csproj">
+      <Project>{a5a219d7-b1e6-4f80-b53b-a9b6e2fac74a}</Project>
+      <Name>UtilsHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureImageTool\CaptureImageTool.csproj">
       <Project>{13e62362-5d00-418f-83ff-99b2699746d7}</Project>
       <Name>CaptureImageTool</Name>
