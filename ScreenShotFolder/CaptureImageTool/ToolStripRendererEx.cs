@@ -63,8 +63,7 @@ namespace CaptureTool
             else
             {
                 LinearGradientMode mode = e.ToolStrip.Orientation == Orientation.Horizontal ? LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
-                RenderBackgroundInternal(g, e.AffectedBounds, ColorTable.BackColorHover, ColorTable.BorderColor, ColorTable.BackColorNormal,
-                   RoundStyle.All, false, true, mode);
+                RenderBackgroundInternal(g, e.AffectedBounds, ColorTable.BackColorHover, ColorTable.BorderColor, ColorTable.BackColorNormal, RoundStyle.All, false, true, mode);
             }
         }
 
@@ -73,8 +72,7 @@ namespace CaptureTool
             ToolStripButton item = e.Item as ToolStripButton;
             if (item != null)
             {
-                LinearGradientMode mode = e.ToolStrip.Orientation == Orientation.Horizontal ?
-                    LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
+                LinearGradientMode mode = e.ToolStrip.Orientation == Orientation.Horizontal ? LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
                 Graphics g = e.Graphics;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 Rectangle bounds = new Rectangle(Point.Empty, item.Size);
@@ -82,8 +80,7 @@ namespace CaptureTool
                 if (item.BackgroundImage != null)
                 {
                     Rectangle clipRect = item.Selected ? item.ContentRectangle : bounds;
-                    ControlPaintEx.DrawBackgroundImage(g, item.BackgroundImage, ColorTable.BackColorNormal, item.BackgroundImageLayout, bounds,
-                        clipRect);
+                    ControlPaintEx.DrawBackgroundImage(g, item.BackgroundImage, ColorTable.BackColorNormal, item.BackgroundImageLayout, bounds, clipRect);
                 }
 
                 if (item.CheckState == CheckState.Unchecked)
@@ -118,8 +115,7 @@ namespace CaptureTool
                     {
                         color = ColorTable.BackColorPressed;
                     }
-                    RenderBackgroundInternal(e.Graphics, bounds, color, ColorTable.BorderColor, ColorTable.BackColorNormal, RoundStyle.All,
-                        true, true, mode);
+                    RenderBackgroundInternal(e.Graphics, bounds, color, ColorTable.BorderColor, ColorTable.BackColorNormal, RoundStyle.All, true, true, mode);
                     return;
                 }
             }

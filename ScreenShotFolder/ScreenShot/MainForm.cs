@@ -49,6 +49,9 @@ namespace ScreenShot
                         ShowInTaskbar = true;
                     }
                     break;
+                case DefaultMessageValue.WmRbuttondown:
+                    //int i = 43;
+                    break;
             }
             base.WndProc(ref m);
         }
@@ -86,7 +89,7 @@ namespace ScreenShot
                 if (!Visible)
                 {
                     Show();
-                    if (this.WindowState == FormWindowState.Minimized)
+                    if (WindowState == FormWindowState.Minimized)
                     {
                         WindowState = FormWindowState.Normal;
                     }
@@ -128,6 +131,14 @@ namespace ScreenShot
         {
             AboutForm f = new AboutForm();
             f.ShowDialog();
+        }
+
+        private void notifyIcon1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(new Point(MousePosition.X, MousePosition.Y), ToolStripDropDownDirection.AboveRight);
+            }
         }
     }
 }

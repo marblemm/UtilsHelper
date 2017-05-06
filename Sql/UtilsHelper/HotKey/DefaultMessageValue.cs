@@ -21,6 +21,9 @@ namespace UtilsHelper.HotKey
         public const int WmMove = 0x0003;				 //;				       //移动一个窗口
         public const int WmSize = 0x0005;				 //;				       //改变一个窗口的大小
         public const int WmActivate = 0x0006;				 //;				       //一个窗口被激活或失去激活状态
+
+
+
         public const int WmNull = 0x0000;				 // // 空消息，此消息将被接收窗口忽略
         public const int WmSetfocus = 0x0007;				 //  获得焦点后
         public const int WmKillfocus = 0x0008;				 //  失去焦点
