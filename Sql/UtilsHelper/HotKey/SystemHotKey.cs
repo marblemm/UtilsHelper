@@ -76,9 +76,9 @@ namespace UtilsHelper.HotKey
 
     //public class FormEx : Form
     //{
-    //    private const int WmHotkey = 0x312; //窗口消息：热键
-    //    private const int WmCreate = 0x1;   //窗口消息：创建
-    //    private const int WmDestroy = 0x2;   //窗口消息：销毁
+    //    private const int WmHotkey = 0x312;; //窗口消息：热键
+    //    private const int WmCreate = 0x1;  ; //窗口消息：创建
+    //    private const int WmDestroy = 0x2;  ; //窗口消息：销毁
 
     //    private const int HotKeyId = 1; //热键ID（自定义）
 

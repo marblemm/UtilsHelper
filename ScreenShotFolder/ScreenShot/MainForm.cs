@@ -28,7 +28,7 @@ namespace ScreenShot
         {
             switch (m.Msg)
             {
-                case HotKeyDefault.WmHotKey:
+                case DefaultMessageValue.WmHotKey:
                     switch (m.WParam.ToInt32())
                     {
                         case 100:
@@ -36,11 +36,18 @@ namespace ScreenShot
                             break;
                     }
                     break;
-                case HotKeyDefault.WmCreate:
+                case DefaultMessageValue.WmCreate:
                     SystemHotKey.RegHotKey(Handle, 100, KeyModifiers.Ctrl | KeyModifiers.Alt, Keys.Z);
                     break;
-                case HotKeyDefault.WmDestory:
+                case DefaultMessageValue.WmDestory:
                     SystemHotKey.UnRegHotKey(Handle, 100);
+                    break;
+                case DefaultMessageValue.WmSyscommand:
+                    if (m.WParam.ToInt32() == DefaultMessageValue.ScMinimize)
+                    {
+                        WindowState = FormWindowState.Minimized;
+                        ShowInTaskbar = true;
+                    }
                     break;
             }
             base.WndProc(ref m);
@@ -75,10 +82,15 @@ namespace ScreenShot
                 pictureBox.Width = image.Width;
                 pictureBox.Height = image.Height;
                 pictureBox.Image = image;
+                Clipboard.SetDataObject(image);
                 if (!Visible)
                 {
                     Show();
-                    WindowState = FormWindowState.Normal;
+                    if (this.WindowState == FormWindowState.Minimized)
+                    {
+                        WindowState = FormWindowState.Normal;
+                    }
+                    //WindowState = FormWindowState.Normal;
                     Activate();
                 }
             }

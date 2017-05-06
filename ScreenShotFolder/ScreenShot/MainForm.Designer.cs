@@ -38,8 +38,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panelBottom.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -107,7 +107,7 @@
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "ScreenShot";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
@@ -117,14 +117,21 @@
             this.退出ToolStripMenuItem,
             this.帮助ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 48);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.帮助ToolStripMenuItem.Text = "帮助";
+            this.帮助ToolStripMenuItem.Click += new System.EventHandler(this.帮助ToolStripMenuItem_Click);
             // 
             // pictureBox
             // 
@@ -135,14 +142,7 @@
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
             // 
-            // 帮助ToolStripMenuItem
-            // 
-            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.帮助ToolStripMenuItem.Text = "帮助";
-            this.帮助ToolStripMenuItem.Click += new System.EventHandler(this.帮助ToolStripMenuItem_Click);
-            // 
-            // FormCSharpWinDemo
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,7 +150,7 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.panelBottom);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormCSharpWinDemo";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "截图界面";
             this.panelBottom.ResumeLayout(false);

@@ -974,7 +974,7 @@ namespace CaptureTool
             }
             _mouseDownPoint = point;
             _selectImageBounds = rect;
-            SelectImageRect = ImageBoundsToRect(rect); ;
+            SelectImageRect = ImageBoundsToRect(rect);
         }
 
         private Rectangle ImageBoundsToRect(Rectangle bounds)
