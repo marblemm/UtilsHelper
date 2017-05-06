@@ -11,11 +11,7 @@
 //		版本: 1.0	
 // </modify>
 
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace UtilsHelper.ClipBoard

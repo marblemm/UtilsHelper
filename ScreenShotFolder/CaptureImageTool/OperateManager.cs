@@ -27,13 +27,9 @@ namespace CaptureTool
             get { return OperateList.Count; }
         }
 
-        public void AddOperate(
-            OperateType operateType, 
-            Color color,
-            object data)
+        public void AddOperate(OperateType operateType, Color color, object data)
         {
-            OperateObject obj = new OperateObject(
-                operateType, color, data);
+            OperateObject obj = new OperateObject(operateType, color, data);
             if (OperateList.Count > MaxOperateCount)
             {
                 OperateList.RemoveAt(0);

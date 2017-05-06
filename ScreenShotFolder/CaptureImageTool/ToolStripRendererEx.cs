@@ -11,7 +11,7 @@ namespace CaptureTool
         private CaptureImageToolColorTable _colorTable;
 
         private static readonly int OffsetMargin = 24;
-        private const string MenuLogoString = "csharpwin.com";
+        //private const string MenuLogoString = "marble";
 
         public ToolStripRendererEx()
         {
@@ -34,21 +34,16 @@ namespace CaptureTool
             }
         }
 
-        protected override void OnRenderToolStripBackground(
-            ToolStripRenderEventArgs e)
+        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             ToolStrip toolStrip = e.ToolStrip;
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
-
             if (toolStrip is ToolStripDropDown)
             {
                 RegionHelper.CreateRegion(e.ToolStrip, e.AffectedBounds);
-
                 Rectangle rect = e.AffectedBounds;
-
-                using (GraphicsPath path = GraphicsPathHelper.CreatePath(
-                    rect, 8, RoundStyle.All, false))
+                using (GraphicsPath path = GraphicsPathHelper.CreatePath(rect, 8, RoundStyle.All, false))
                 {
                     using (SolidBrush brush = new SolidBrush(ColorTable.BackColorNormal))
                     {
@@ -58,8 +53,7 @@ namespace CaptureTool
                     {
                         g.DrawPath(pen, path);
 
-                        using (GraphicsPath innerPath = GraphicsPathHelper.CreatePath(
-                            rect, 8, RoundStyle.All, true))
+                        using (GraphicsPath innerPath = GraphicsPathHelper.CreatePath(rect, 8, RoundStyle.All, true))
                         {
                             g.DrawPath(pen, innerPath);
                         }
@@ -69,16 +63,8 @@ namespace CaptureTool
             else
             {
                 LinearGradientMode mode = e.ToolStrip.Orientation == Orientation.Horizontal ? LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
-                RenderBackgroundInternal(
-                   g,
-                   e.AffectedBounds,
-                   ColorTable.BackColorHover,
-                   ColorTable.BorderColor,
-                   ColorTable.BackColorNormal,
-                   RoundStyle.All,
-                   false,
-                   true,
-                   mode);
+                RenderBackgroundInternal(g, e.AffectedBounds, ColorTable.BackColorHover, ColorTable.BorderColor, ColorTable.BackColorNormal,
+                   RoundStyle.All, false, true, mode);
             }
         }
 
@@ -96,12 +82,7 @@ namespace CaptureTool
                 if (item.BackgroundImage != null)
                 {
                     Rectangle clipRect = item.Selected ? item.ContentRectangle : bounds;
-                    ControlPaintEx.DrawBackgroundImage(
-                        g,
-                        item.BackgroundImage,
-                        ColorTable.BackColorNormal,
-                        item.BackgroundImageLayout,
-                        bounds,
+                    ControlPaintEx.DrawBackgroundImage(g, item.BackgroundImage, ColorTable.BackColorNormal, item.BackgroundImageLayout, bounds,
                         clipRect);
                 }
 
@@ -114,16 +95,7 @@ namespace CaptureTool
                         {
                             color = ColorTable.BackColorPressed;
                         }
-                        RenderBackgroundInternal(
-                            g,
-                            bounds,
-                            color,
-                            ColorTable.BorderColor,
-                            ColorTable.BackColorNormal,
-                            RoundStyle.All,
-                            true,
-                            true,
-                            mode);
+                        RenderBackgroundInternal(g, bounds, color, ColorTable.BorderColor, ColorTable.BackColorNormal, RoundStyle.All, true, true, mode);
                         return;
                     }
                     if (e.ToolStrip is ToolStripOverflow)
@@ -170,13 +142,7 @@ namespace CaptureTool
                 }
                 rect.Width -= OffsetMargin + 8;
             }
-            RenderSeparatorLine(
-               e.Graphics,
-               rect,
-               ColorTable.BackColorPressed,
-               ColorTable.BackColorNormal,
-               SystemColors.ControlLightLight,
-               e.Vertical);
+            RenderSeparatorLine(e.Graphics, rect, ColorTable.BackColorPressed, ColorTable.BackColorNormal, SystemColors.ControlLightLight, e.Vertical);
         }
 
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
@@ -203,8 +169,7 @@ namespace CaptureTool
 
             if (e.Item.Selected)
             {
-                RenderBackgroundInternal(g, rect, ColorTable.BackColorHover, ColorTable.BorderColor, ColorTable.BackColorNormal, RoundStyle.All,
-                   true, true, LinearGradientMode.Vertical);
+                RenderBackgroundInternal(g, rect, ColorTable.BackColorHover, ColorTable.BorderColor, ColorTable.BackColorNormal, RoundStyle.All, true, true, LinearGradientMode.Vertical);
             }
             else
             {
@@ -246,7 +211,7 @@ namespace CaptureTool
 
                 g.TextRenderingHint = TextRenderingHint.AntiAlias;
                 StringFormat sf = new StringFormat(StringFormatFlags.NoWrap);
-                Font font = new Font(e.ToolStrip.Font.FontFamily, 11, FontStyle.Bold);
+                //Font font = new Font(e.ToolStrip.Font.FontFamily, 11, FontStyle.Bold);
                 sf.Alignment = StringAlignment.Near;
                 sf.LineAlignment = StringAlignment.Center;
                 sf.Trimming = StringTrimming.EllipsisCharacter;
@@ -254,15 +219,15 @@ namespace CaptureTool
                 g.TranslateTransform(rect.X, rect.Bottom);
                 g.RotateTransform(270f);
 
-                if (!string.IsNullOrEmpty(MenuLogoString))
-                {
-                    Rectangle newRect = new Rectangle(rect.X, rect.Y, rect.Height, rect.Width);
+                //if (!string.IsNullOrEmpty(MenuLogoString))
+                //{
+                //    Rectangle newRect = new Rectangle(rect.X, rect.Y, rect.Height, rect.Width);
 
-                    using (Brush brush = new SolidBrush(ColorTable.ForeColor))
-                    {
-                        g.DrawString(MenuLogoString, font, brush, newRect, sf);
-                    }
-                }
+                //    using (Brush brush = new SolidBrush(ColorTable.ForeColor))
+                //    {
+                //        g.DrawString(MenuLogoString, font, brush, newRect, sf);
+                //    }
+                //}
 
                 g.ResetTransform();
                 return;
@@ -373,8 +338,7 @@ namespace CaptureTool
                         }
                         using (GraphicsPath pathTop = GraphicsPathHelper.CreatePath(rectTop, roundWidth, RoundStyle.Top, false))
                         {
-                            using (SolidBrush brushAlpha =
-                                new SolidBrush(Color.FromArgb(80, 255, 255, 255)))
+                            using (SolidBrush brushAlpha = new SolidBrush(Color.FromArgb(80, 255, 255, 255)))
                             {
                                 g.FillPath(brushAlpha, pathTop);
                             }

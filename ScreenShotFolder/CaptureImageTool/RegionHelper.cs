@@ -8,8 +8,7 @@ namespace CaptureTool
     {
         public static void CreateRegion(Control control, Rectangle rect)
         {
-            using (GraphicsPath path =
-                GraphicsPathHelper.CreatePath(rect, 8, RoundStyle.All, false))
+            using (GraphicsPath path = GraphicsPathHelper.CreatePath(rect, 8, RoundStyle.All, false))
             {
                 if (control.Region != null)
                 {

@@ -174,8 +174,7 @@ namespace CaptureTool
                     HideTextBox();
                     if (OperateManager.OperateCount > 0)
                     {
-                        OperateObject obj =
-                            OperateManager.OperateList[OperateManager.OperateCount - 1];
+                        OperateObject obj = OperateManager.OperateList[OperateManager.OperateCount - 1];
                         if (obj.OperateType == OperateType.DrawText)
                         {
                             DrawTextData textData = obj.Data as DrawTextData;
@@ -383,8 +382,7 @@ namespace CaptureTool
                 {
                     if (!SelectedImage || SizeGrip != SizeGrip.None)
                     {
-                        using (SolidBrush brush = new SolidBrush(
-                            Color.FromArgb(90, colorTable.BackColorNormal)))
+                        using (SolidBrush brush = new SolidBrush(Color.FromArgb(90, colorTable.BackColorNormal)))
                         {
                             g.FillRectangle(brush, rect);
                         }
@@ -401,9 +399,7 @@ namespace CaptureTool
                     {
                         foreach (Rectangle sizeGripRect in SizeGripRectList.Values)
                         {
-                            g.FillRectangle(
-                                brush,
-                                sizeGripRect);
+                            g.FillRectangle(brush, sizeGripRect);
                         }
                     }
                 }
@@ -488,25 +484,13 @@ namespace CaptureTool
                 case DrawStyle.Rectangle:
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawRectangle(
-                            pen,
-                            ImageBoundsToRect(Rectangle.FromLTRB(
-                            _mouseDownPoint.X,
-                            _mouseDownPoint.Y,
-                            point.X,
-                            point.Y)));
+                        g.DrawRectangle(pen, ImageBoundsToRect(Rectangle.FromLTRB(_mouseDownPoint.X, _mouseDownPoint.Y, point.X, point.Y)));
                     }
                     break;
                 case DrawStyle.Ellipse:
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawEllipse(
-                            pen,
-                            ImageBoundsToRect(Rectangle.FromLTRB(
-                            _mouseDownPoint.X,
-                            _mouseDownPoint.Y,
-                            point.X,
-                            point.Y)));
+                        g.DrawEllipse(pen, ImageBoundsToRect(Rectangle.FromLTRB(_mouseDownPoint.X, _mouseDownPoint.Y, point.X, point.Y)));
                     }
                     break;
                 case DrawStyle.Arrow:
@@ -525,13 +509,7 @@ namespace CaptureTool
                         pen.DashCap = DashCap.Round;
                         pen.DashPattern = new[] { 9f, 3f, 3f, 3f };
 
-                        g.DrawRectangle(
-                            pen,
-                            ImageBoundsToRect(Rectangle.FromLTRB(
-                            _mouseDownPoint.X,
-                            _mouseDownPoint.Y,
-                            point.X,
-                            point.Y)));
+                        g.DrawRectangle(pen, ImageBoundsToRect(Rectangle.FromLTRB(_mouseDownPoint.X, _mouseDownPoint.Y, point.X, point.Y)));
                     }
                     break;
                 case DrawStyle.Line:
@@ -544,9 +522,7 @@ namespace CaptureTool
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLines(
-                           pen,
-                           points);
+                        g.DrawLines(pen, points);
                     }
                     break;
             }
@@ -829,8 +805,7 @@ namespace CaptureTool
         private Image GetDestopImage()
         {
             Rectangle rect = Screen.GetBounds(this);
-            Bitmap bmp = new Bitmap(
-                rect.Width, rect.Height, PixelFormat.Format32bppArgb);
+            Bitmap bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
             Graphics g = Graphics.FromImage(bmp);
 
             IntPtr gHdc = g.GetHdc();

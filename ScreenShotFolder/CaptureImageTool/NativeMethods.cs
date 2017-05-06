@@ -21,10 +21,7 @@ namespace CaptureTool
         public static extern int ReleaseDC(IntPtr hwnd, IntPtr hDc);
 
         [DllImport("gdi32.dll")]
-        public static extern bool BitBlt(
-            IntPtr hObject, int nXDest, int nYDest, int nWidth,
-           int nHeight, IntPtr hObjSource, int nXSrc, int nYSrc,
-            TernaryRasterOperations dwRop);
+        public static extern bool BitBlt(IntPtr hObject, int nXDest, int nYDest, int nWidth, int nHeight, IntPtr hObjSource, int nXSrc, int nYSrc, TernaryRasterOperations dwRop);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr LoadLibrary(string lpFileName);
@@ -75,18 +72,12 @@ namespace CaptureTool
 
             public static RECT FromXywh(int x, int y, int width, int height)
             {
-                return new RECT(x,
-                                y,
-                                x + width,
-                                y + height);
+                return new RECT(x, y, x + width, y + height);
             }
 
             public static RECT FromRectangle(Rectangle rect)
             {
-                return new RECT(rect.Left,
-                                 rect.Top,
-                                 rect.Right,
-                                 rect.Bottom);
+                return new RECT(rect.Left, rect.Top, rect.Right, rect.Bottom);
             }
         }
 
