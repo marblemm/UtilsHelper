@@ -109,6 +109,7 @@
     <Compile Include="Dapper\WrappedDataReader.cs" />
     <Compile Include="Dapper\WrappedReader.cs" />
     <Compile Include="Dapper\XmlHandlers.cs" />
+    <Compile Include="DirectoryHelper\DirectoryHelper.cs" />
     <Compile Include="HookHelper\DiableTaskMgrHelper.cs" />
     <Compile Include="HookHelper\KeyboardHook.cs" />
     <Compile Include="HookHelper\KeyboardSimulator.cs" />

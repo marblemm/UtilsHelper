@@ -8,23 +8,23 @@ namespace UtilsHelper.HotKey
         //常用消息分布
         //        消息范围    说 明
         //      0 ～ public const int WM_USER – 1         //系统消息
-        //      public const int WM_USER ～ = 0x7FFF;				 //        //自定义窗口类整数消息
-        //      public const int WM_APP ～ = 0xBFFF;				 //         //应用程序自定义消息
-        //      = 0xC000;				 // ～ = 0xFFFF;				 //         //应用程序字符串消息
-        //      >= 0xFFFF;				 //                  //为以后系统应用保留
+        //      public const int WM_USER ～ = 0x7FFF;	    //自定义窗口类整数消息
+        //      public const int WM_APP ～ = 0xBFFF;				 //应用程序自定义消息
+        //      = 0xC000;				 // ～ = 0xFFFF;				 //应用程序字符串消息
+        //      >= 0xFFFF;				 //为以后系统应用保留
 
         //常用Windows消息
 
         public const int WmHotKey = 0x312;						 //  //窗口消息：热键
-        public const int WmCreate = 0x0001;				 //;				    //窗口消息：创建
-        public const int WmDestory = 0x0002;				 //;				    //窗口消息：销毁
-        public const int WmMove = 0x0003;				 //;				       //移动一个窗口
-        public const int WmSize = 0x0005;				 //;				       //改变一个窗口的大小
-        public const int WmActivate = 0x0006;				 //;				       //一个窗口被激活或失去激活状态
+        public const int WmCreate = 0x0001;				 //窗口消息：创建
+        public const int WmDestory = 0x0002;				 //窗口消息：销毁
+        public const int WmMove = 0x0003;				 //移动一个窗口
+        public const int WmSize = 0x0005;				 //改变一个窗口的大小
+        public const int WmActivate = 0x0006;				 //一个窗口被激活或失去激活状态
 
 
 
-        public const int WmNull = 0x0000;				 // // 空消息，此消息将被接收窗口忽略
+        public const int WmNull = 0x0000;				 // 空消息，此消息将被接收窗口忽略
         public const int WmSetfocus = 0x0007;				 //  获得焦点后
         public const int WmKillfocus = 0x0008;				 //  失去焦点
         public const int WmEnable = 0x000A;				 //  应用程序Enable状态改变时产生

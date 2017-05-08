@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using UtilsHelper.WindowsApiHelper;
 using UtilsHelper.xmlHelper;
 
 namespace ScreenShot
@@ -11,18 +12,6 @@ namespace ScreenShot
     static class Program
     {
 
-        [DllImport("User32.dll")]
-
-        public static extern bool ShowWindowAsync(IntPtr hWnd, int cmdShow);
-        [DllImport("user32.dll")]
-        private static extern bool FlashWindow(IntPtr hWnd, bool bInvert);
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr SetFocus(IntPtr hWnd);//设定焦点
-
-        [DllImport("User32.dll")]
-
-        public static extern bool SetForegroundWindow(IntPtr hWnd);
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -61,10 +50,10 @@ namespace ScreenShot
                 //frm.WindowState = FormWindowState.Normal;
 
 
-                FlashWindow(hdc, true);
-                SetFocus(hdc);
-                ShowWindowAsync(hdc, 1);
-                SetForegroundWindow(hdc);
+                WindowsApi.FlashWindow(hdc, true);
+                WindowsApi.SetFocus(hdc);
+                WindowsApi.ShowWindowAsync(hdc, 1);
+                WindowsApi.SetForegroundWindow(hdc);
             }
         }
     }

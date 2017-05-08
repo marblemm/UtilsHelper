@@ -15,7 +15,6 @@ namespace TestForm
         private ListView _listView1;
         private Label _curXyLabel;
         readonly KeyboardHook _keyboardHook = new KeyboardHook();
-        private readonly KeyHookHelper _keyHookHelper = new KeyHookHelper();
         public HookTestForm()
         {
             InitializeComponent();
