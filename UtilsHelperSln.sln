@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTest", "Sql\SqlTest\SqlT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsHelper", "Sql\UtilsHelper\UtilsHelper.csproj", "{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

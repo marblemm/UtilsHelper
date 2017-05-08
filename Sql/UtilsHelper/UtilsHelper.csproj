@@ -108,6 +108,15 @@
     <Compile Include="Dapper\WrappedDataReader.cs" />
     <Compile Include="Dapper\WrappedReader.cs" />
     <Compile Include="Dapper\XmlHandlers.cs" />
+    <Compile Include="HookHelper\DiableTaskMgrHelper.cs" />
+    <Compile Include="HookHelper\KeyboardHook.cs" />
+    <Compile Include="HookHelper\KeyboardSimulator.cs" />
+    <Compile Include="HookHelper\MouseHook.cs" />
+    <Compile Include="HookHelper\MouseButton.cs" />
+    <Compile Include="HookHelper\GlobalHook.cs" />
+    <Compile Include="HookHelper\MousePoint.cs" />
+    <Compile Include="HookHelper\MouseSimulator.cs" />
+    <Compile Include="HookHelper\StandardShortcut.cs" />
     <Compile Include="HotKey\DefaultMessageValue.cs" />
     <Compile Include="HotKey\KeyModifiers.cs" />
     <Compile Include="HotKey\SystemHotKey.cs" />
