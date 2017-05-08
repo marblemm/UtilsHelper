@@ -54,11 +54,7 @@ namespace CaptureTool
             {
                 get
                 {
-                    return new Rectangle(
-                        Left,
-                        Top,
-                        Right - Left,
-                        Bottom - Top);
+                    return new Rectangle(Left, Top, Right - Left, Bottom - Top);
                 }
             }
 

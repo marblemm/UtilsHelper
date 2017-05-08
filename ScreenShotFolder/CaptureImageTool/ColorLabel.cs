@@ -23,11 +23,11 @@ namespace CaptureTool
 
         #region Properties
 
-        [DefaultValue(typeof(Color),"65, 173, 236")]
+        [DefaultValue(typeof(Color), "65, 173, 236")]
         public Color BorderColor
         {
             get { return _borderColor; }
-            set 
+            set
             {
                 _borderColor = value;
                 Invalidate();
@@ -45,11 +45,7 @@ namespace CaptureTool
 
         private void SetStyles()
         {
-            SetStyle(
-                ControlStyles.UserPaint |
-                ControlStyles.OptimizedDoubleBuffer |
-                ControlStyles.AllPaintingInWmPaint |
-                ControlStyles.ResizeRedraw, true);
+            SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
             UpdateStyles();
         }
 
@@ -65,23 +61,13 @@ namespace CaptureTool
             Rectangle rect = ClientRectangle;
             using (SolidBrush brush = new SolidBrush(BackColor))
             {
-                g.FillRectangle(
-                    brush,
-                    rect);
+                g.FillRectangle(brush, rect);
             }
 
-            ControlPaint.DrawBorder(
-                g,
-                rect,
-                _borderColor,
-                ButtonBorderStyle.Solid);
+            ControlPaint.DrawBorder(g, rect, _borderColor, ButtonBorderStyle.Solid);
 
             rect.Inflate(-1, -1);
-            ControlPaint.DrawBorder(
-                g,
-                rect,
-                Color.White,
-                ButtonBorderStyle.Solid);
+            ControlPaint.DrawBorder(g, rect, Color.White, ButtonBorderStyle.Solid);
         }
 
         #endregion

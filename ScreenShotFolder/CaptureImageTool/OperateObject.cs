@@ -6,8 +6,7 @@ namespace CaptureTool
     {
         public OperateObject() { }
 
-        public OperateObject(
-            OperateType operateType, Color color, object data)
+        public OperateObject(OperateType operateType, Color color, object data)
         {
             OperateType = operateType;
             Color = color;
