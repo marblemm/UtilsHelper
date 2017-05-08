@@ -27,7 +27,7 @@ namespace UtilsHelper.AutoBoot
     //但是如果在64位机器上执行，会自动创建在HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run
 
 
-    static class SetAutoBootStartHelper
+    public static class SetAutoBootStartHelper
     {
         /// <summary>  
         /// 在注册表中添加、删除开机自启动键值  

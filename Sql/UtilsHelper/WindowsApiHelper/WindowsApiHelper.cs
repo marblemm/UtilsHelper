@@ -14,7 +14,6 @@
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace UtilsHelper.WindowsApiHelper
@@ -39,15 +38,10 @@ namespace UtilsHelper.WindowsApiHelper
 
         public static Cursor CreateCursor(string fileName)
         {
-            IntPtr cursorHandle = LoadCursorFromFile(fileName);
+            IntPtr cursorHandle = WindowsApi.LoadCursorFromFile(fileName);
             return new Cursor(cursorHandle);
         }
 
-        [DllImport("user32.dll")]
-        private static extern IntPtr LoadCursorFromFile(string fileName);
 
-        [DllImport("user32.dll")]
-        // ReSharper disable once UnusedMember.Local
-        private static extern uint DestroyCursor(IntPtr cursorHandle);
     }
 }

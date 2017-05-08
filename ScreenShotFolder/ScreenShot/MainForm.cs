@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using CaptureTool;
+using UtilsHelper.AutoBoot;
 using UtilsHelper.HotKey;
 
 namespace ScreenShot
@@ -14,6 +15,7 @@ namespace ScreenShot
         public MainForm()
         {
             InitializeComponent();
+            //SetAutoBootStartHelper.SetAutoBootStatu(Application.ExecutablePath, true);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -71,6 +73,7 @@ namespace ScreenShot
             }
             else
             {
+                //var aa = new Cursor("Arrow.cur");
                 capture.SelectCursor = CursorManager.Arrow;
                 capture.DrawCursor = CursorManager.Cross;
             }
@@ -123,6 +126,7 @@ namespace ScreenShot
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notifyIcon1.Visible = false;
+            notifyIcon1.Dispose();
             Application.Exit();
             Application.ExitThread();
         }
