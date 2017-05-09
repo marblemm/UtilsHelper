@@ -1,17 +1,4 @@
-﻿// <copyright file="Class1.cs" company="zondy">
-//		Copyright (c) Zondy. All rights reserved.
-// </copyright>
-// <author>Administrator</author>
-// <date>2017/5/5 18:56:17</date>
-// <summary>文件功能描述</summary>
-// <modify>
-//		修改人:		
-//		修改时间:	
-//		修改描述:	
-//		版本: 1.0	
-// </modify>
-
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace UtilsHelper.ClipBoard

@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using CaptureTool;
-using UtilsHelper.AutoBoot;
 using UtilsHelper.HotKey;
 
 namespace ScreenShot

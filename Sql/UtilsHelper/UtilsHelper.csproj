@@ -50,6 +50,19 @@
   <ItemGroup>
     <Compile Include="AutoBoot\SetAutoBootStartHelper.cs" />
     <Compile Include="ClipBoard\ClipboardHelper.cs" />
+    <Compile Include="Control\TipForm\AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\TipForm\AlertForm.Designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TipForm\TipMessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\TipForm\TipMessageBoxForm.Designer.cs">
+      <DependentUpon>TipMessageBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TipForm\LoadMode.cs" />
     <Compile Include="CsvHelper\CachedCsvReader.cs" />
     <Compile Include="CsvHelper\CachedCsvReader.CsvBindingList.cs" />
     <Compile Include="CsvHelper\CachedCsvReader.CsvPropertyDescriptor.cs" />
@@ -139,6 +152,9 @@
     <Folder Include="ExcelHelper\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\TipForm\TipMessageBoxForm.resx">
+      <DependentUpon>TipMessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CsvHelper\Resources\ExceptionMessage.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
