@@ -126,7 +126,8 @@
     <Compile Include="Dapper\WrappedDataReader.cs" />
     <Compile Include="Dapper\WrappedReader.cs" />
     <Compile Include="Dapper\XmlHandlers.cs" />
-    <Compile Include="DirectoryHelper\DirectoryHelper.cs" />
+    <Compile Include="SystemDirectoryHelper\OpenDialogHelper.cs" />
+    <Compile Include="SystemDirectoryHelper\SystemDirectoryHelper.cs" />
     <Compile Include="HookHelper\DiableTaskMgrHelper.cs" />
     <Compile Include="HookHelper\KeyboardHook.cs" />
     <Compile Include="HookHelper\KeyboardSimulator.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="SqlHelper\SqLiteHelper.cs" />
     <Compile Include="WindowsApiHelper\WindowsApi.cs" />
     <Compile Include="WindowsApiHelper\WindowsApiHelper.cs" />
+    <Compile Include="XmlHelper\FileHelper.cs" />
     <Compile Include="XmlHelper\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>

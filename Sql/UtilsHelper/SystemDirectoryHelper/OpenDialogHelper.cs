@@ -12,17 +12,61 @@
 // </modify>
 
 using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 
-namespace ControlHelper.CommonForm
+namespace UtilsHelper.SystemDirectoryHelper
 {
-    class Class1
+    public class OpenDialogHelper
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        public static string OpenFolderBrowserDialog(string title)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = title;
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                return fbd.SelectedPath;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="title"></param>
+        /// <param name="filter">@"Excel File(*.xls;*.xlsx)|*.xls;*.xlsx"</param>
+        /// <param name="isMulti"></param>
+        /// <returns></returns>
+        public static T OpenFiledialog<T>(string title, string filter, bool isMulti)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = filter;
+            ofd.Title = title;
+            ofd.Multiselect = isMulti;
+            DialogResult dialogResult = ofd.ShowDialog();
+            if (DialogResult.OK == dialogResult)
+            {
+                return (T)Convert.ChangeType(ofd.FileName, typeof(T));
+            }
+            return default(T);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="directory"></param>
+        public static void OpenFolder(string directory)
+        {
+            Process.Start("Explorer.exe", directory);
+        }
         private void SaveFileDialog()
         {
             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -61,7 +105,7 @@ namespace ControlHelper.CommonForm
             fbd.Description = "请选择输出目录";
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
         }
     }
