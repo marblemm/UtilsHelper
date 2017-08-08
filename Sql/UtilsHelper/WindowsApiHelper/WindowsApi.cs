@@ -99,6 +99,8 @@ namespace UtilsHelper.WindowsApiHelper
 
         #region 原子操作
 
+        //全局原子法，创建程序前，先检查全局原子表中看是否存在特定原子A（创建时添加的），存在时停止创建，说明该程序已运行了一个实例；不存在则运行程序并想全局原子表中添加特定原子A；退出程序时要记得释放特定的原子A
+
         [DllImport("kernel32.dll")]
         public static extern UInt32 GlobalAddAtom(string lpString); //添加原子 
         [DllImport("kernel32.dll")]
@@ -187,5 +189,8 @@ namespace UtilsHelper.WindowsApiHelper
         /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int msg, int wParam, string lParam);
+
+        [DllImport("user32.dll", EntryPoint = "WindowFromPoint")]
+        public static extern int WindowFromPoint(int xPoint, int yPoint);
     }
 }
