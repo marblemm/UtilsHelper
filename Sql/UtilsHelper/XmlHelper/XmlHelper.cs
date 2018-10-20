@@ -2,29 +2,49 @@
 using System.IO;
 using System.Xml;
 
-namespace UtilsHelper.xmlHelper
+namespace UtilsHelper.XmlHelper
 {
+    /// <summary>
+    /// xml帮助api
+    /// 通过LoadXml接口获取XMLDocument，然后进行操作，所有的操作都没有进行保存的，要保存自己调用保存接口
+    /// </summary>
     public static class XmlHelper
     {
-        public static XmlNode GetXmlNode(string xmlPath, string nodeText)
+        /// <summary>
+        /// 获取单个node
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <returns></returns>
+        public static XmlNode GetXmlNode(this XmlDocument xmlDocument, string nodeText)
         {
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             return xmlnode;
         }
 
-        public static XmlNodeList GetXmlNodeList(string xmlPath, string nodeText)
+       /// <summary>
+       /// 获取多个node
+       /// </summary>
+       /// <param name="xmlDocument"></param>
+       /// <param name="nodeText"></param>
+       /// <returns></returns>
+        public static XmlNodeList GetXmlNodeList(this XmlDocument xmlDocument, string nodeText)
         {
-            var xmldocument = LoadXml(xmlPath);
-            XmlNodeList xmlnodelist = xmldocument.SelectNodes(nodeText);
+            XmlNodeList xmlnodelist = xmlDocument.SelectNodes(nodeText);
             return xmlnodelist;
         }
 
-        public static XmlAttribute GetXmlAttribute(string xmlPath, string nodeText, string attributeName)
+        /// <summary>
+        /// 获取node的属性值
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <param name="attributeName"></param>
+        /// <returns></returns>
+        public static XmlAttribute GetXmlAttribute(this XmlDocument xmlDocument, string nodeText, string attributeName)
         {
             XmlAttribute xmlattribute = null;
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode != null)
             {
                 if (xmlnode.Attributes != null && xmlnode.Attributes.Count > 0)
@@ -35,11 +55,16 @@ namespace UtilsHelper.xmlHelper
             return xmlattribute;
         }
 
-        public static XmlAttributeCollection GetNodeAttributes(string xmlPath, string nodeText)
+        /// <summary>
+        /// 获取属性集合
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <returns></returns>
+        public static XmlAttributeCollection GetNodeAttributes(this XmlDocument xmlDocument, string nodeText)
         {
             XmlAttributeCollection xmlattributes = null;
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode != null)
             {
                 if (xmlnode.Attributes != null && xmlnode.Attributes.Count > 0)
@@ -50,11 +75,19 @@ namespace UtilsHelper.xmlHelper
             return xmlattributes;
         }
 
-        public static bool UpdateAttribute(string xmlPath, string nodeText, string attributeName, string value)
+
+        /// <summary>
+        /// 更新属性值
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <param name="attributeName"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool UpdateAttribute(this XmlDocument xmlDocument, string nodeText, string attributeName, string value)
         {
             bool isSuccess = false;
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode == null) return false;
             if (xmlnode.Attributes == null) return false;
             foreach (XmlAttribute attribute in xmlnode.Attributes)
@@ -63,34 +96,43 @@ namespace UtilsHelper.xmlHelper
                 {
                     isSuccess = true;
                     attribute.Value = value;
-                    xmldocument.Save(xmlPath);
                     break;
                 }
             }
             return isSuccess;
         }
 
-        public static bool DeleteAttributes(string xmlPath, string nodeText)
+        /// <summary>
+        /// 删除所有的属性集合
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <returns></returns>
+        public static bool DeleteAttributes(this XmlDocument xmlDocument, string nodeText)
         {
             bool isSuccess = false;
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode == null) return false;
             if (xmlnode.Attributes != null && xmlnode.Attributes.Count > 0)
             {
                 xmlnode.Attributes.RemoveAll();
-                xmldocument.Save(xmlPath);
                 isSuccess = true;
             }
             return isSuccess;
         }
 
-        public static bool DeleteOneAttribute(string xmlPath, string nodeText, string attributeName)
+        /// <summary>
+        /// 删除一个属性
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <param name="attributeName"></param>
+        /// <returns></returns>
+        public static bool DeleteOneAttribute(this XmlDocument xmlDocument, string nodeText, string attributeName)
         {
             bool isSuccess = false;
-            var xmldocument = LoadXml(xmlPath);
             XmlAttribute xmlAttribute = null;
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode == null) return false;
             if (xmlnode.Attributes != null && xmlnode.Attributes.Count > 0)
             {
@@ -106,16 +148,22 @@ namespace UtilsHelper.xmlHelper
             if (xmlAttribute != null)
             {
                 xmlnode.Attributes.Remove(xmlAttribute);
-                xmldocument.Save(xmlPath);
                 isSuccess = true;
             }
             return isSuccess;
         }
 
-        public static bool AddAttribute(string xmlPath, string nodeText, string attributeName, string value)
+        /// <summary>
+        /// 添加一个属性
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <param name="attributeName"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool AddAttribute(this XmlDocument xmlDocument, string nodeText, string attributeName, string value)
         {
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode == null) return false;
             if (xmlnode.Attributes != null && xmlnode.Attributes.Count > 0)//遍历判断有无此属性
             {
@@ -128,30 +176,40 @@ namespace UtilsHelper.xmlHelper
                     }
                 }
             }
-            XmlAttribute xmlAttribute = xmldocument.CreateAttribute(attributeName);
+            XmlAttribute xmlAttribute = xmlDocument.CreateAttribute(attributeName);
             xmlAttribute.Value = value;
             if (xmlnode.Attributes != null) xmlnode.Attributes.Append(xmlAttribute);
-            xmldocument.Save(xmlPath);
             return true;
         }
 
         /// <summary/>
         /// 删除指定节点名称为nodeName的所有节点，如果该节点有子节点，则不能删除
-        public static bool DeleteNode(string xmlPath, string nodeText)
+        public static bool DeleteNode(this XmlDocument xmlDocument, string nodeText)
         {
             bool isSuccess = false;
-            var xmldocument = LoadXml(xmlPath);
-            XmlNode xmlnode = xmldocument.SelectSingleNode(nodeText);
+            XmlNode xmlnode = xmlDocument.SelectSingleNode(nodeText);
             if (xmlnode == null) return false;
             if (!xmlnode.HasChildNodes)
             {
                 if (xmlnode.ParentNode != null) xmlnode.ParentNode.RemoveChild(xmlnode); //删除节点
                 isSuccess = true;
-                xmldocument.Save(xmlPath);
             }
             return isSuccess;
         }
 
+        /// <summary>
+        /// 创建xml文档
+        ///  XmlDocument xmlDoc = new XmlDocument();
+        ///  XmlDeclaration xmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", null);
+        ///  xmlDoc.AppendChild(xmlDeclaration);
+        ///  XmlNode root = xmlDoc.CreateElement(rootNodeName);
+        ///  xmlDoc.AppendChild(root);
+        ///  xmlDoc.Save(xmlPath);
+        ///  return xmlDoc;
+        /// </summary>
+        /// <param name="xmlPath"></param>
+        /// <param name="rootNodeName"></param>
+        /// <returns></returns>
         public static XmlDocument CreateXmlDocument(string xmlPath, string rootNodeName)
         {
             XmlDocument xmlDoc = new XmlDocument();
@@ -159,23 +217,31 @@ namespace UtilsHelper.xmlHelper
             xmlDoc.AppendChild(xmlDeclaration);
             XmlNode root = xmlDoc.CreateElement(rootNodeName);
             xmlDoc.AppendChild(root);
-            xmlDoc.Save(xmlPath);
             return xmlDoc;
         }
 
-        public static void AppendNode(string xmlPath, string nodeText, Dictionary<string, string> attributeDic)
+        /// <summary>
+        /// 添加节点并添加属性
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <param name="attributeDic"></param>
+        public static void AppendNode(this XmlDocument xmlDocument, string nodeText, Dictionary<string, string> attributeDic)
         {
-            var xmlDoc = LoadXml(xmlPath);
-            var node = xmlDoc.CreateElement(nodeText);
+            var node = xmlDocument.CreateElement(nodeText);
             foreach (var attri in attributeDic)
             {
                 node.SetAttribute(attri.Key, attri.Value);
             }
-            if (xmlDoc.DocumentElement != null) xmlDoc.DocumentElement.AppendChild(node);
-            xmlDoc.Save(xmlPath);
+            if (xmlDocument.DocumentElement != null) xmlDocument.DocumentElement.AppendChild(node);
         }
 
-        private static XmlDocument LoadXml(string xmlPath)
+        /// <summary>
+        /// 加载xml文档
+        /// </summary>
+        /// <param name="xmlPath"></param>
+        /// <returns></returns>
+        public static XmlDocument LoadXml(string xmlPath)
         {
             if (File.Exists(xmlPath))
             {
@@ -186,10 +252,15 @@ namespace UtilsHelper.xmlHelper
             return null;
         }
 
-        public static Dictionary<string, string> ReadXmlNode(string xmlPath, string nodeText)
+        /// <summary>
+        /// 添加节点
+        /// </summary>
+        /// <param name="xmlDocument"></param>
+        /// <param name="nodeText"></param>
+        /// <returns></returns>
+        public static Dictionary<string, string> ReadXmlNode(this XmlDocument xmlDocument, string nodeText)
         {
-            var xmlDoc = LoadXml(xmlPath);
-            var rootEle = xmlDoc.DocumentElement;
+            var rootEle = xmlDocument.DocumentElement;
             if (rootEle == null) return null;
             var curNode = rootEle.SelectSingleNode(nodeText);
             if (curNode == null) return null;

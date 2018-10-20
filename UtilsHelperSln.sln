@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlHelper", "ControlHelper\ControlHelper.csproj", "{D35D5751-AEE5-48AC-9A43-2A8036614B69}"
 EndProject
@@ -18,6 +18,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsHelper", "Sql\UtilsHelper\UtilsHelper.csproj", "{A5A219D7-B1E6-4F80-B53B-A9B6E2FAC74A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenXmlHelper", "OpenXmlHelper", "{480E7B9E-6897-48A3-A5F4-4C8568BAAD67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTest", "OpenXmlHelper\ExcelTest\ExcelTest.csproj", "{FC177A46-56CD-4E48-BEBB-0AB0E091EDA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTestTests", "OpenXmlHelper\ExcelTestTests\ExcelTestTests.csproj", "{EE8141A0-49D9-43E4-BB61-63B72E5C9D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "OpenXmlHelper\Utils\Utils.csproj", "{8AF0B380-6E5F-46FB-B0A3-FB809E8F87A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +61,18 @@ Global
 		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18A6DA31-C1C4-4789-BEC0-0A30B9A36958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC177A46-56CD-4E48-BEBB-0AB0E091EDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC177A46-56CD-4E48-BEBB-0AB0E091EDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC177A46-56CD-4E48-BEBB-0AB0E091EDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC177A46-56CD-4E48-BEBB-0AB0E091EDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8141A0-49D9-43E4-BB61-63B72E5C9D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8141A0-49D9-43E4-BB61-63B72E5C9D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8141A0-49D9-43E4-BB61-63B72E5C9D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8141A0-49D9-43E4-BB61-63B72E5C9D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF0B380-6E5F-46FB-B0A3-FB809E8F87A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF0B380-6E5F-46FB-B0A3-FB809E8F87A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF0B380-6E5F-46FB-B0A3-FB809E8F87A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF0B380-6E5F-46FB-B0A3-FB809E8F87A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +80,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{13E62362-5D00-418F-83FF-99B2699746D7} = {7D3750D8-A377-4059-B7A9-3120899068EB}
 		{A1F85AB3-8F62-4E55-BBEF-BD8707C00616} = {7D3750D8-A377-4059-B7A9-3120899068EB}
+		{FC177A46-56CD-4E48-BEBB-0AB0E091EDA5} = {480E7B9E-6897-48A3-A5F4-4C8568BAAD67}
+		{EE8141A0-49D9-43E4-BB61-63B72E5C9D1A} = {480E7B9E-6897-48A3-A5F4-4C8568BAAD67}
+		{8AF0B380-6E5F-46FB-B0A3-FB809E8F87A2} = {480E7B9E-6897-48A3-A5F4-4C8568BAAD67}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39F1CD4A-C2A3-4215-8C7D-1C48EFD8C2CC}
 	EndGlobalSection
 EndGlobal
